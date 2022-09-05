@@ -1,0 +1,197 @@
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--Cream);
+  display: grid;
+  place-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  background-color: var(--White);
+  width: min(40rem, 90vw);
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+main>* {
+  flex: 1;
+  flex-basis: 50%;
+}
+
+main .product img {
+  width: 100%;
+  display: block;
+  min-height: 100%;
+}
+
+main .dicription {
+  padding: 32px
+}
+
+main .dicription h1 {
+  font-size: .875rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .25rem;
+  color: var(--Dark-grayish-blue);
+  margin-top: 0;
+}
+
+main .dicription h2 {
+  font-family: 'Fraunces', sans-serif;
+  color: var(--Very-dark-blue);
+  margin-top: 16px;
+  font-size: 32px;
+  max-width: 10ch;
+}
+
+main .dicription p {
+  color: var(--Dark-grayish-blue);
+  line-height: 1.5;
+}
+
+main .dicription .discount {
+  display: flex;
+  align-items: center;
+}
+
+.discount span:first-of-type {
+  color: var(--Dark-cyan);
+  font-size: 32px;
+  font-family: 'Fraunces', sans-serif;
+}
+
+.discount span:last-of-type {
+  margin-left: 1.25rem;
+  color: var(--Dark-grayish-blue);
+  font-size: .8125rem;
+}
+
+main .dicription button {
+  margin-top: 32px;
+  width: 100%;
+  padding: 1.2em;
+  border-radius: .5rem;
+  border: none;
+  color: var(--White);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Dark-cyan);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main .dicription button:hover {
+  opacity: .8;
+}
+
+main .dicription button:active {
+  opacity: 1;
+  background-color: var(--Very-dark-blue);
+}
+
+.dicription button img {
+  margin-right: .625rem;
+}
+
+/*media query sectiom //////////////////////////
+*******************************
+*******************************
+*******************************
+*******************************
+*/
+@media (max-width:48.125rem) {
+
+  main {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    max-width: 400px;
+  }
+}
+
+/* attribution section*/
+@keyframes spout-out {
+
+  from {
+    width: 1.3ch
+  }
+
+  to {
+    width: 39.5ch
+  }
+
+
+}
+
+@keyframes spout-in {
+
+  from {
+    width: 39.5ch
+  }
+
+  to {
+    width: 1.3ch
+  }
+
+
+}
+
+.attribution {
+  position: fixed;
+  bottom: .625rem;
+  left: 1.25rem;
+  width: 39.5ch;
+  height: 2ch;
+  overflow: hidden;
+  background-color: white;
+  animation: spout-in 2s forwards;
+  z-index: 0;
+}
+
+.attribution p {
+  margin: 0;
+  width: 39ch;
+}
+
+.attribution a {
+  cursor: pointer;
+  outline: none;
+}
+
+.attribution::after {
+  content: '\203A';
+  font-size: 27px;
+  position: absolute;
+  top: -50%;
+  display: block;
+  background-color: white;
+  right: -0.125rem;
+  width: 17.6px;
+  text-align: center;
+  text-indent: .125rem;
+  padding-top: .125rem;
+  height: 4ch;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.attribution:focus {
+  animation: spout-out 2s forwards;
+}
